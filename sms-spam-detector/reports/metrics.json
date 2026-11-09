@@ -1,0 +1,184 @@
+{
+  "created_at_utc": "2026-11-09T06:20:14.944285+00:00",
+  "sklearn_version": "1.9.1",
+  "random_seed": 42,
+  "dataset": {
+    "raw_rows": 5574,
+    "invalid_or_empty_rows_removed": 0,
+    "conflicting_rows_removed": 0,
+    "duplicate_rows_removed": 415,
+    "clean_rows": 5159,
+    "class_counts": {
+      "ham": 4517,
+      "spam": 642
+    }
+  },
+  "train_rows": 4127,
+  "test_rows": 1032,
+  "selection_method": "Highest mean macro F1 across 5 stratified training folds",
+  "selected_model": "Logistic Regression",
+  "models": {
+    "Multinomial Naive Bayes": {
+      "cv_macro_f1_mean": 0.8861373855098978,
+      "cv_macro_f1_std": 0.011932132308640379,
+      "accuracy": 0.9670542635658915,
+      "spam_precision": 1.0,
+      "spam_recall": 0.734375,
+      "spam_f1": 0.8468468468468469,
+      "confusion_matrix": [
+        [
+          904,
+          0
+        ],
+        [
+          34,
+          94
+        ]
+      ]
+    },
+    "Logistic Regression": {
+      "cv_macro_f1_mean": 0.941310965051294,
+      "cv_macro_f1_std": 0.011767616973360465,
+      "accuracy": 0.9786821705426356,
+      "spam_precision": 1.0,
+      "spam_recall": 0.828125,
+      "spam_f1": 0.905982905982906,
+      "confusion_matrix": [
+        [
+          904,
+          0
+        ],
+        [
+          22,
+          106
+        ]
+      ]
+    }
+  },
+  "top_words": {
+    "ham": [
+      {
+        "word": "just",
+        "count": 230
+      },
+      {
+        "word": "gt",
+        "count": 219
+      },
+      {
+        "word": "lt",
+        "count": 217
+      },
+      {
+        "word": "ok",
+        "count": 211
+      },
+      {
+        "word": "ll",
+        "count": 187
+      },
+      {
+        "word": "know",
+        "count": 183
+      },
+      {
+        "word": "like",
+        "count": 178
+      },
+      {
+        "word": "good",
+        "count": 171
+      },
+      {
+        "word": "got",
+        "count": 171
+      },
+      {
+        "word": "come",
+        "count": 164
+      },
+      {
+        "word": "ur",
+        "count": 159
+      },
+      {
+        "word": "day",
+        "count": 147
+      },
+      {
+        "word": "love",
+        "count": 142
+      },
+      {
+        "word": "time",
+        "count": 141
+      },
+      {
+        "word": "going",
+        "count": 135
+      }
+    ],
+    "spam": [
+      {
+        "word": "free",
+        "count": 156
+      },
+      {
+        "word": "txt",
+        "count": 98
+      },
+      {
+        "word": "ur",
+        "count": 94
+      },
+      {
+        "word": "stop",
+        "count": 87
+      },
+      {
+        "word": "text",
+        "count": 86
+      },
+      {
+        "word": "mobile",
+        "count": 84
+      },
+      {
+        "word": "reply",
+        "count": 76
+      },
+      {
+        "word": "claim",
+        "count": 74
+      },
+      {
+        "word": "www",
+        "count": 68
+      },
+      {
+        "word": "prize",
+        "count": 62
+      },
+      {
+        "word": "just",
+        "count": 51
+      },
+      {
+        "word": "uk",
+        "count": 51
+      },
+      {
+        "word": "cash",
+        "count": 50
+      },
+      {
+        "word": "new",
+        "count": 49
+      },
+      {
+        "word": "won",
+        "count": 49
+      }
+    ]
+  }
+}
