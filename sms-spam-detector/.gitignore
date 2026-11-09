@@ -4,5 +4,6 @@ __pycache__/
 *.py[cod]
 data/*.csv
 models/*.joblib
+!models/spam_detector.joblib
 models/*.log
 .streamlit/secrets.toml

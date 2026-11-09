@@ -25,9 +25,10 @@ If your default Python is newer and dependencies cannot install, use an installe
 Python 3.13, or `uv venv --python 3.13 .venv` if you have uv.
 
 Open the local URL printed by Streamlit, usually http://localhost:8501.
-No activation command or API key is required. The first training run needs internet
-access to download the dataset. Later runs reuse the local CSV and model.
-Starting the app without a saved model automatically downloads and trains it.
+No activation command or API key is required. The repository includes a trained
+model, so you can skip the explicit training command to start the app immediately.
+Reproducing training needs internet access for the initial dataset download.
+Starting the app without the included model automatically downloads and trains it.
 
 On macOS/Linux, replace `.\.venv\Scripts\python.exe` with `.venv/bin/python`.
 
@@ -86,8 +87,9 @@ data; they are never hard-coded into the UI.
 
 Tests cover normalization, duplicate/conflict removal, archive parsing, vocabulary
 isolation, input validation, prediction probability mapping, evaluation counts,
-and the Streamlit input-to-result flow. A missing model is trained once for the
-integration tests, so a fresh test environment needs internet access.
+and the Streamlit input-to-result flow. They also verify that the included model
+loads without starting training. Tests use the included model and mock archive
+downloads, so they do not need dataset network access.
 
 `requirements-lock.txt` records the exact runtime packages used for this local
 build. Use it instead of `requirements.txt` when recreating this environment.
@@ -99,7 +101,7 @@ sms-spam-detector/
   app.py
   src/               # Data, preprocessing, training and prediction
   data/README.md     # Source and attribution; downloaded CSV is ignored
-  models/            # Locally generated model, ignored by Git
+  models/            # Included trained model; runtime logs are ignored
   reports/           # Real evaluation results
   tests/             # Data, inference and app checks
   .streamlit/        # Theme and telemetry setting
@@ -140,7 +142,10 @@ results* (Almeida, Hidalgo and Yamakami, 2011).
 Before presenting this as a finished portfolio project, add your own explanation
 of the results and screenshots from your running app. Then publish the repository
 and optionally deploy it to Streamlit Community Cloud with `app.py` as the entry
-point and Python 3.13. The app rebuilds the model when no local artifact is present.
+point and Python 3.13. The included model avoids CPU-heavy startup training on
+shared hosting. scikit-learn, Joblib, NumPy and SciPy versions are fixed to the
+versions used to produce it. PyArrow is restricted below version 25 to match
+the hosting platform's compatibility workaround.
 The source is published at
 [Azhar-Uddin-hub/sms-spam-detector](https://github.com/Azhar-Uddin-hub/sms-spam-detector).
 

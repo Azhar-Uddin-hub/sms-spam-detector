@@ -20,8 +20,9 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m streamlit run app.py
 ```
 
-The first run downloads the public UCI dataset and trains the models. No API key
-is required. Python 3.13 is recommended.
+The repository includes the trained model, so the app can start without a
+dataset download or training. No API key is required. Python 3.13 is recommended.
+To reproduce training, run `python -m src.train` in the project folder.
 
 ## Explore the project
 
@@ -39,7 +40,7 @@ messages only; Bangla and Banglish performance has not been evaluated.
 
 Select this repository, branch `main`, and entrypoint
 `sms-spam-detector/app.py`. In Advanced settings, choose Python 3.13. No secrets
-are needed. The app trains a fresh model on the host at first startup.
+are needed. The included model keeps startup quick on the shared hosting CPU.
 
 The source dataset is the [UCI SMS Spam Collection](https://archive.ics.uci.edu/dataset/228/sms+spam+collection)
 by Tiago Almeida and Jos Hidalgo, provided under CC BY 4.0. See the dataset

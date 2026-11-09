@@ -19,7 +19,7 @@ st.title("A second opinion for your inbox.")
 st.write("Paste an English SMS to see whether a machine learning model thinks it is spam.")
 
 try:
-    with st.spinner("Loading models. The first run downloads the dataset and trains both models…"):
+    with st.spinner("Loading the trained model…"):
         bundle = get_artifacts()
 except Exception:
     st.error("The model could not be loaded. Run `python -m src.train` in the project folder to see the error and rebuild it. The first download needs internet access.")

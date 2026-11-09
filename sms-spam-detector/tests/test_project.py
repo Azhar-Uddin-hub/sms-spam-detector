@@ -11,7 +11,7 @@ from streamlit.testing.v1 import AppTest
 from src.data import ROOT, download_dataset, prepare_data
 from src.predict import predict_message
 from src.preprocess import normalize_text
-from src.train import load_or_train, make_pipelines
+from src.train import MODEL_PATH, load_or_train, make_pipelines
 
 
 @pytest.fixture(scope="session")
@@ -55,6 +55,13 @@ def test_vocabulary_does_not_learn_from_prediction_messages():
     pipeline.fit(["meet friend tomorrow", "free cash prize"], ["ham", "spam"])
     pipeline.predict(["heldoutuniquetoken prize"])
     assert "heldoutuniquetoken" not in pipeline.named_steps["tfidf"].vocabulary_
+
+
+def test_shipped_model_loads_without_training_or_download():
+    assert MODEL_PATH.exists(), "The deployment must include its trained model."
+    with patch("src.train.train", side_effect=AssertionError("Unexpected startup training")):
+        loaded = load_or_train()
+    assert loaded["report"]["selected_model"] == "Logistic Regression"
 
 
 @pytest.mark.parametrize("message", ["", " \n ", "a" * 5001, "🛸🛸🛸", "zxqvzzqxxzz"])
