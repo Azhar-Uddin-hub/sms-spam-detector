@@ -4,6 +4,9 @@ A beginner-friendly machine learning app that classifies English SMS messages as
 **spam** or **not spam**. Compare two real models, inspect their held-out results,
 and try new messages in a Streamlit interface.
 
+**[Use the live app](https://azhar-sms-spam-detector.streamlit.app/)** in your
+browser without installing anything.
+
 This is the first project in a three-project learning path: spam detection,
 student grade prediction, and movie recommendations.
 
@@ -138,7 +141,8 @@ Before presenting this as a finished portfolio project, add your own explanation
 of the results and screenshots from your running app. Then publish the repository
 and optionally deploy it to Streamlit Community Cloud with `app.py` as the entry
 point and Python 3.13. The app rebuilds the model when no local artifact is present.
-This workspace has not been uploaded or deployed.
+The source is published at
+[Azhar-Uddin-hub/sms-spam-detector](https://github.com/Azhar-Uddin-hub/sms-spam-detector).
 
 Good later experiments: analyze false positives, compare word and character
 features using training validation, evaluate calibration, add near-duplicate

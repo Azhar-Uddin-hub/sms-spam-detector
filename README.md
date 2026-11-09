@@ -4,6 +4,13 @@ A beginner-friendly machine learning project with a Streamlit web app. Paste an
 English SMS to classify it as spam or legitimate, and explore real evaluation
 results for Logistic Regression and Multinomial Naive Bayes.
 
+## Try the app
+
+**[Open SMS Spam Detector](https://azhar-sms-spam-detector.streamlit.app/)**
+
+Open the link on your phone or computer, paste an English SMS, and click
+**Analyze message**. You do not need Python, a GitHub account, or an API key.
+
 ## Run locally
 
 ```powershell
